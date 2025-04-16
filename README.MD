@@ -1,4 +1,163 @@
-## 1. Installation de l'environnement et importation des bibliothèques
+# Analyse de Données Pokémon
+
+## Introduction
+Ce projet consiste en une analyse approfondie du dataset Pokémon. L'objectif est de mettre en pratique les techniques d'analyse de données et de visualisation en Python pour explorer les caractéristiques des Pokémon, leurs statistiques et les relations entre ces différentes variables.
+
+## Installation et exécution
+```bash
+# Installation des dépendances
+pip install pandas numpy matplotlib seaborn plotly scipy openpyxl
+
+# Exécution du script
+python script.py
+```
+
+## Structure du projet
+- `script.py` - Script principal d'analyse
+- `data.csv` - Dataset contenant les informations sur les Pokémon
+- `pokemon_analysis_results.xlsx` - Fichier Excel exporté avec les statistiques clés
+- Dossier `figures/` - Visualisations produites par le script
+
+## Visualisations générées
+
+### 1. Distribution des points de vie (HP) des Pokémon
+![Distribution des HP](figures/figure1.png)
+
+Cette visualisation montre la distribution des points de vie (HP) pour tous les Pokémon du dataset. L'histogramme illustre la fréquence des différentes valeurs de HP, tandis que la courbe de densité permet de visualiser la forme générale de la distribution.
+
+**Insights**: 
+- La majorité des Pokémon ont entre 60 et 80 points de vie
+- La distribution est légèrement asymétrique vers la droite (quelques Pokémon ont des HP exceptionnellement élevés)
+- Ces valeurs exceptionnelles correspondent probablement aux Pokémon légendaires ou de stade d'évolution final
+
+### 2. Distribution des statistiques de combat des Pokémon
+![Statistiques de combat](figures/figure2.png)
+
+Ce graphique compare les distributions des cinq principales statistiques de combat des Pokémon: attaque, défense, attaque spéciale, défense spéciale et vitesse.
+
+**Insights**:
+- On peut comparer les médianes, quartiles et valeurs extrêmes de chaque statistique
+- Les outliers représentent des Pokémon avec des statistiques exceptionnelles
+- La variabilité des statistiques diffère selon le type de caractéristique
+- L'attaque spéciale semble avoir la plus grande dispersion
+
+### 3. Relation entre Attaque et Défense des Pokémon
+![Attaque vs Défense](figures/figure3.png)
+
+Ce graphique montre la relation entre les statistiques d'attaque et de défense pour chaque Pokémon.
+
+**Insights**:
+- On observe une corrélation modérée entre l'attaque et la défense
+- Les Pokémon équilibrés se situent le long de la diagonale
+- Les Pokémon spécialisés dans l'attaque se trouvent dans la partie supérieure gauche
+- Les Pokémon défensifs se trouvent dans la partie inférieure droite
+
+### 4. Relation entre Attaque Spéciale et Vitesse
+![Attaque spéciale vs Vitesse](figures/figure4.png)
+
+Ce graphique visualise la relation entre l'attaque spéciale et la vitesse des Pokémon, avec des hexagones dont la couleur indique la densité de points dans cette région.
+
+**Insights**:
+- Les Pokémon rapides tendent également à avoir une forte attaque spéciale
+- Les zones les plus sombres indiquent où se trouve la majorité des Pokémon
+- Ce graphique aide à identifier des archétypes comme "attaquant spécial rapide"
+
+### 5. Répartition des Types par Génération
+![Types par Génération](figures/figure5.png)
+
+Cette visualisation montre la distribution des types primaires de Pokémon à travers les différentes générations de jeux.
+
+**Insights**:
+- On peut voir quels types étaient plus ou moins représentés dans chaque génération
+- Certaines générations ont introduit des types spécifiques en plus grand nombre
+- L'équilibre entre les types s'est amélioré au fil des générations
+
+### 6. Pourcentage de Pokémon Légendaires par Type Primaire
+![Légendaires par Type](figures/figure6.png)
+
+Ce graphique montre, pour chaque type primaire, le pourcentage de Pokémon qui sont légendaires versus ceux qui ne le sont pas.
+
+**Insights**:
+- Certains types ont une proportion beaucoup plus élevée de Pokémon légendaires
+- On peut identifier les types les plus "communs" versus les plus "rares/spéciaux"
+
+### 7. Distribution de l'Attaque par Type Primaire
+![Attaque par Type](figures/figure7.png)
+
+Ce graphique compare la distribution des statistiques d'attaque pour chaque type primaire de Pokémon.
+
+**Insights**:
+- On peut voir quels types de Pokémon sont généralement plus forts en attaque
+- Identifier la variabilité au sein de chaque type
+- Comprendre l'équilibrage du jeu en termes de puissance offensive par type
+
+### 8. Moyenne des Statistiques par Statut Légendaire
+![Stats moyennes par statut légendaire](figures/figure8.png)
+
+Cette visualisation compare les statistiques moyennes des Pokémon légendaires versus non-légendaires pour les six statistiques principales.
+
+**Insights**:
+- On quantifie l'avantage statistique des Pokémon légendaires
+- On identifie dans quelles statistiques l'écart est le plus prononcé
+
+### 9. Relation entre Attaque, Attaque Spéciale, Type et Statut Légendaire
+![Visualisation multivariée](figures/figure9.png)
+
+Ce graphique combine quatre dimensions d'information: Attaque (X), Attaque Spéciale (Y), Type primaire (couleur) et Statut légendaire (taille).
+
+**Insights**:
+- Certains types se spécialisent dans l'attaque physique versus spéciale
+- Les Pokémon légendaires suivent généralement les mêmes tendances que les non-légendaires
+- Des clusters sont visibles correspondant à différents archetypes de Pokémon
+
+### 10. Matrice de Corrélation des Variables Numériques
+![Matrice de corrélation](figures/figure10.png)
+
+Cette visualisation montre les coefficients de corrélation entre toutes les paires de variables numériques du dataset.
+
+**Insights**:
+- Les couleurs plus intenses indiquent des corrélations plus fortes
+- On identifie quelles statistiques sont corrélées entre elles
+- Ces informations peuvent guider des analyses plus approfondies
+
+### 11. Relation entre Taille et Poids des Pokémon
+![Taille vs Poids](figures/figure11.png)
+
+Ce graphique montre la relation entre la taille (en mètres) et le poids (en kg) des Pokémon, avec une ligne de tendance.
+
+**Insights**:
+- On observe une corrélation forte entre taille et poids
+- Les outliers correspondent à des Pokémon avec des caractéristiques physiques particulières
+
+### 12. Relation entre Attaque et Attaque Spéciale
+![Attaque vs Attaque Spéciale](figures/figure12.png)
+
+Ce graphique montre la relation entre l'attaque physique et l'attaque spéciale des Pokémon, avec une ligne de tendance.
+
+**Insights**:
+- On évalue si les Pokémon tendent à se spécialiser dans un type d'attaque
+- Cette visualisation aide à comprendre les stratégies de combat dans le jeu
+
+### 13. Distribution des Statistiques par Statut Légendaire
+![Distributions par statut légendaire](figures/figure13.png)
+
+Ce panneau montre les distributions comparées des six statistiques principales entre Pokémon légendaires et non-légendaires.
+
+**Insights**:
+- On compare les distributions pour chaque statistique
+- On identifie pour quelles statistiques l'écart est le plus notable
+
+## Analyse statistique
+Le script effectue une analyse de corrélation entre les variables et un test du Chi2 pour évaluer la relation entre le type primaire et la génération des Pokémon.
+
+## Résultats exportés
+Les résultats principaux sont exportés dans un fichier Excel contenant:
+- Les statistiques moyennes par type de Pokémon
+- Les statistiques moyennes par génération
+- La matrice de corrélation complète
+
+## Conclusion
+Cette analyse permet de mieux comprendre les caractéristiques des Pokémon et les relations entre leurs différentes statistiques. Les visualisations générées offrent des insights précieux sur l'équilibrage du jeu et les tendances dans la conception des Pokémon à travers les différentes générations.# 1. Installation de l'environnement et importation des bibliothèques
 
 ```python
 # Importation des bibliothèques nécessaires
@@ -1398,5 +1557,6 @@ Pour une documentation optimale:
    - Pour convertir en DOCX: utilisez un convertisseur comme Pandoc avec la commande:
      ```
      pandoc README.md -o documentation.docx
-     #   T P - I A  
+     #   T P - I A 
+ 
  
